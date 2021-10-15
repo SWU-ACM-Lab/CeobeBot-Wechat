@@ -1,0 +1,23 @@
+{
+  "name": "CeobeBot-Wechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunist-c/CeobeBot-Wechat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunist-c/CeobeBot-Wechat/issues"
+  },
+  "homepage": "https://github.com/sunist-c/CeobeBot-Wechat#readme",
+  "dependencies": {
+    "@vant/weapp": "^1.9.1"
+  }
+}

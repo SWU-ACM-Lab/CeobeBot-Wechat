@@ -121,3 +121,9 @@ dump.rdb
 # Wechat Files
 project.config.json
 sitemap.json
+
+# node_modules
+node_modules/*
+node_modules
+miniprogram_npm
+miniprogram_npm/*

@@ -1,23 +1,47 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
+
+<van-tabs animated swipeable sticky="true" style="height:1300rpx" color="{{currentColor}}">
+  <van-tab title="Index" dot="{{tabBarStatus[0].dot}}">
+
+    <!-- 底部控件封装 -->
+    <view style="width: 100%; bottom: 0; position:fixed; align-items: center;">
+      <!-- 底部选择栏 -->
+      <van-dropdown-menu active-color="{{currentColor}}" direction="up">
+        <van-dropdown-item options="{{indexDropdownItems}}" value="{{indexDropdownI}}" style="width: 300rpx;" bind:change="handleIndexDropdownIChange"/>
+        <van-dropdown-item options="{{indexDropdownItems[indexDropdownI].items}}" value="{{indexDropdownII}}" disabled="{{!indexDropdownEnableII}}"/>
+        <van-dropdown-item options="{{indexDropdownItems[indexDropdownI].items[indexDropdownII].items}}" value="{{indexDropdownIII}}" disabled="{{!indexDropdownEnableIII}}"/>
+      </van-dropdown-menu>
+      
+      <!-- 底部输入框 -->
+      <van-field clearable="true" placeholder="在此键入信息..." maxlength="64">
+        <van-button slot="button" size="small" type="primary" icon="guide-o" color="{{currentColor}}"></van-button>
+      </van-field>
+    </view>
+
+  </van-tab>
+
+  <van-tab title="Problems" dot="{{tabBarStatus[1].dot}}">
+  
+  </van-tab>
+
+  <van-tab title="Words" dot="{{tabBarStatus[2].dot}}">
+  
+  </van-tab>
+
+  <van-tab title="Statistic" dot="{{tabBarStatus[3].dot}}">
+  
+  </van-tab>
+
+  <van-tab title="Manage" dot="{{tabBarStatus[4].dot}}">
+    
+    
+    <van-cell-group>
+      <van-cell  title="主题颜色" label="{{themeColor[currentThemeId].name + themeColor[currentThemeId].color}}">
+      <block slot="value">
+        <van-stepper value="{{ currentThemeId+1 }}" max="5" bind:change="handleChangeTheme"/>
+      </block>
+        
+      </van-cell>
+    </van-cell-group>
+
+  </van-tab>
+</van-tabs>
