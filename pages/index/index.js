@@ -7,7 +7,8 @@ Page({
   data: {
     currentTab: "index",
     currentColor: "#6B8E23",
-    currentThemeId: 2,
+    currentThemeId: 0,
+    themeCount: 0,
 
     themeColor: [
       {
@@ -34,12 +35,27 @@ Page({
         "id": "yellow",
         "name": "内心黄",
         "color": "#FFD700"
+      },
+      {
+        "id": "blue",
+        "name": "天空蓝",
+        "color": "#1E90FF"
+      },
+      {
+        "id": "red",
+        "name": "中国红",
+        "color": "#FF0000"
+      },
+      {
+        "id": "gray",
+        "name": "淡雅灰",
+        "color": "#C0C0C0"
       }
     ],
     
     tabBarStatus : [
       {
-        "dot": false,
+        "dot": true,
       },
       {
         "dot": false,
@@ -81,26 +97,32 @@ Page({
 
     indexInputValue: "",
 
-    actions: [
+    indexMessages: [
       {
-        name: '选项',
+        "sender": true,
+        "message": "Hello, 0Hello, 0Hello, 0Hello, 0Hello, 0Hello, 0Hello, 0Hello, 0Hello, 0",
+        "time": 0
       },
       {
-        name: '选项',
+        "sender": false,
+        "message": "Hello, 1Hello, 1Hello, 1Hello, 1Hello, 1Hello, 1Hello, 1Hello, 1Hello, 1",
+        "time": 1
       },
       {
-        name: '选项',
-        subname: '描述信息',
-        openType: 'share',
+        "sender": true,
+        "message": "Hello, 2",
+        "time": 2
       },
-    ],
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      themeCount: this.data.themeColor.length
+    })
   },
 
   /**
@@ -196,5 +218,5 @@ Page({
   handleMessageSend(res) {
     console.log(this.data.indexInputValue)
     console.log(this.data.indexDropdownValue)
-  }
+  },
 })
