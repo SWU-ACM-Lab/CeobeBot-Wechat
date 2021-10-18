@@ -46,3 +46,67 @@
     background: lightpink;
     border-radius: 0rpx 25rpx 25rpx 25rpx;
 }
+
+.words-action-area {
+    height: 100rpx;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    box-shadow: 0 10px 5px 10px rgba(0, 0, 0, 0.1);
+    /* align-content: stretch; */
+    justify-content: space-between;
+    padding-top: 20rpx;
+}
+
+.words-action-button-forget {
+    border-radius: 50rpx 0 0 50rpx !important;
+    width: 200rpx;
+}
+
+.words-action-button-remember {
+    border-radius: 0 50rpx 50rpx 0 !important;
+    width: 200rpx;
+}
+
+.words-action-play {
+    align-items: center;
+    margin-right: 30rpx;
+}
+
+.words-action-play-area {
+    width: 200rpx;
+    padding-left: 30rpx;
+    display: inline-flex;
+}
+
+.words-action-button-area {
+    padding-right: 30rpx;
+}
+
+.words-loading-icon {
+    opacity: 0.5;
+}
+
+.words-loading-area {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150rpx;
+}
+
+.words-card-area {
+    margin-top: 50rpx;
+    padding-bottom: 120rpx;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.words-card {
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.1);
+    margin-right: 50rpx;
+    margin-left: 50rpx;
+}
